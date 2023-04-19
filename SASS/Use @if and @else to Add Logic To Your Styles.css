@@ -1,0 +1,63 @@
+/*Use @if y @else para agregar lógica a sus estilos*/
+/*La @ifdirectiva en Sass es útil para probar un caso específico: funciona como la ifdeclaración en JavaScript.
+
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+Y al igual que en JavaScript, @else ify @elseprueba para más condiciones:
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+Cree un mixin llamado border-strokeque tome un parámetro $val. El mixin debe verificar las siguientes condiciones usando @if, @else ify @else:
+
+light - 1px solid black
+medium - 3px solid black
+heavy - 6px solid black
+Si $valno es light, mediumo heavy, el borde debe establecerse en none.*/
+/*Ejercicio*/
+/*Su código debe declarar un mixin llamado border-strokeque tiene un parámetro llamado $val.
+Su mixin debe tener una @ifdeclaración para verificar si $vales lighty para establecer el bordera 1px solid black.
+Su mixin debe tener una @else ifdeclaración para verificar si $vales mediumy para establecer el bordera 3px solid black.
+Su mixin debe tener una @else ifdeclaración para verificar si $vales heavyy para establecer el bordera 6px solid black.
+Tu mixin debe tener una @elsedeclaración para establecer el borderto none.*/
+
+<style type='text/scss'>
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    }
+    @else if $val == medium {
+      border: 3px solid black;
+    }
+    @else if $val == heavy {
+      border: 6px solid black;
+    }
+    @else {
+      border: none;
+    }
+  }
+
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>

@@ -1,0 +1,47 @@
+/*Use @each para mapear elementos en una lista*/
+/*El último desafío mostró cómo la @fordirectiva usa un valor inicial y final para realizar un bucle una determinada cantidad de veces. Sass también ofrece la @eachdirectiva que recorre cada elemento en una lista o mapa. En cada iteración, la variable se asigna al valor actual de la lista o el mapa.
+
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+Un mapa tiene una sintaxis ligeramente diferente. Aquí hay un ejemplo:
+
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+Tenga en cuenta que la $keyvariable es necesaria para hacer referencia a las claves en el mapa. De lo contrario, el CSS compilado tendría color1, color2... en él. Los dos ejemplos de código anteriores se convierten en el siguiente CSS:
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+Escriba una @eachdirectiva que recorra una lista: blue, black, redy asigne cada variable a una .color-bg clase, donde la colorparte cambia para cada elemento. Cada  clase debe establecer el background-colorcolor respectivo.*/
+/*Ejercicio*/
+/*Su código debe usar la @eachdirectiva.
+Su .blue-bg clase debe tener una background-colorde color azul.
+Su .black-bg clase debe tener una background-colorde negro.
+Su .red-bg clase debe tener una background-colorde color rojo.*/
+
+<style type='text/scss'>
+
+@each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>

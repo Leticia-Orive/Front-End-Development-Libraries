@@ -1,0 +1,53 @@
+/*Crear CSS reutilizable con Mixins*/
+/*En Sass, un mixin es un grupo de declaraciones CSS que se pueden reutilizar en toda la hoja de estilo.
+
+Las funciones CSS más nuevas tardan un tiempo antes de que se adopten por completo y estén listas para usar en todos los navegadores. A medida que se agregan funciones a los navegadores, las reglas CSS que las usan pueden necesitar prefijos de proveedores. Considere box-shadow:
+
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+Es mucho escribir para volver a escribir esta regla para todos los elementos que tienen un box-shadow, o para cambiar cada valor para probar diferentes efectos. Los mixins son como funciones para CSS. Aquí está cómo escribir uno:
+
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+La definición comienza con @mixinseguida de un nombre personalizado. Los parámetros (el $x, $y, $blury $cen el ejemplo anterior) son opcionales. Ahora, cada vez que box-shadowse necesita una regla, solo una sola línea que llama al mixin reemplaza el tener que escribir todos los prefijos del proveedor. Un mixin se llama con la @includedirectiva:
+
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+Escribe un mixin para border-radiusy dale un $radiusparámetro. Debe usar todos los prefijos de proveedores del ejemplo. Luego use el border-radiusmixin para darle al #awesomeelemento un radio de borde de 15px.
+
+*/
+/*Ejercicio*/
+/*Su código debe declarar un mixin llamado border-radius que tiene un parámetro llamado $radius.
+Su código debe incluir el -webkit-border-radius prefijo del proveedor que usa el $radiusparámetro.
+Su código debe incluir el -moz-border-radius prefijo del proveedor que usa el $radiusparámetro.
+Su código debe incluir el -ms-border-radius prefijo del proveedor que usa el $radiusparámetro.
+Su código debe incluir la border-radius regla general que usa el $radiusparámetro.
+Su código debe llamar al border-radius mix inusando la @includepalabra clave, configurándolo en 15px.*/
+
+<style type='text/scss'>
+
+@mixin border-radius($radius){
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+    border-radius:$radius;
+  }
+
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    @include border-radius(15px);
+  }
+</style>
+
+<div id="awesome"></div>

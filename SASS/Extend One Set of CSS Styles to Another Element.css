@@ -1,0 +1,43 @@
+/*Extienda un conjunto de estilos CSS a otro elemento*/
+/*Sass tiene una característica llamada extendque facilita tomar prestadas las reglas CSS de un elemento y construir sobre ellas en otro.
+
+Por ejemplo, el siguiente bloque de reglas CSS le da estilo a una .panelclase. Tiene un background-color, heighty border.
+
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+Ahora quiere otro panel llamado .big-panel. Tiene las mismas propiedades base que .panel, pero también necesita un widthy font-size. Es posible copiar y pegar las reglas CSS iniciales desde .panel, pero el código se vuelve repetitivo a medida que agrega más tipos de paneles. La extenddirectiva es una forma sencilla de reutilizar las reglas escritas para un elemento y luego agregar más para otro:
+
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
+Tendrán .big-panellas mismas propiedades que .panelademás de los nuevos estilos.
+
+Haga una clase .info-importantque se extienda .infoy también tenga un background-colorconjunto a magenta.*/
+/*Ejercicio*/
+/*Su info-important clase debe tener un background-colorconjunto de magenta.
+Su info-important clase debe usar @extendpara heredar el estilo de la infoclase.*/
+
+<style type='text/scss'>
+  h3 {
+    text-align: center;
+  }
+  .info {
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  .info-important {
+    @extend .info;
+    background-color: magenta;
+  }  
+
+</style>
+<h3>Posts</h3>
+<div class="info-important">
+  <p>This is an important post. It should extend the class ".info" and have its own CSS styles.</p>
+</div>

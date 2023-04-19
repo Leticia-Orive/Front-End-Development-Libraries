@@ -1,0 +1,51 @@
+/*Almacenar datos con variables Sass*/
+/*
+Una característica de Sass que es diferente a CSS es que usa variables. Se declaran y configuran para almacenar datos, de forma similar a JavaScript.
+
+En JavaScript, las variables se definen usando las palabras clave lety const. En Sass, las variables comienzan con un $seguido del nombre de la variable.
+
+Aqui hay un par de ejemplos:
+
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+Y para usar las variables:
+
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+Un ejemplo en el que las variables son útiles es cuando varios elementos deben tener el mismo color. Si se cambia ese color, el único lugar para editar el código es el valor de la variable.
+
+Cree una variable $text-colory configúrela en red. Luego cambie el valor de la colorpropiedad para el .blog-posty h2a la $text-colorvariable.
+
+*/
+/*Ejercicios*/
+/*Su código debe tener una variable Sass declarada $text-colorcon un valor de red.
+Su código debe usar la $text-colorvariable para cambiar colorel .blog-posty h2los elementos.
+Su .blog-postelemento debe tener una colorde color rojo.
+Tus h2elementos deben tener una colorde color rojo.*/
+
+<style type='text/scss'>
+  $text-color: red;
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>

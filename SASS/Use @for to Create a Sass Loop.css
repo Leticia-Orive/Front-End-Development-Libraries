@@ -1,0 +1,51 @@
+/*Use @for para crear un bucle Sass*/
+/*La @fordirectiva agrega estilos en un bucle, muy similar a un forbucle en JavaScript.
+
+@forse utiliza de dos maneras: "de principio a fin" o "de principio a fin". La principal diferencia es que "de principio a fin" excluye el número final como parte del conteo, y "de principio a fin" incluye el número final como parte del conteo.
+
+Aquí hay un ejemplo de principio a fin:
+
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+La #{$i}parte es la sintaxis para combinar una variable ( i) con texto para formar una cadena. Cuando el archivo Sass se convierte a CSS, se ve así:
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+...
+
+.col-12 {
+  width: 100%;
+}
+Esta es una forma poderosa de crear un diseño de cuadrícula. Ahora tiene doce opciones para anchos de columna disponibles como  clases CSS.
+
+Escriba una @fordirectiva que tome una variable $jque va de 1 a 6.
+
+Debe crear 5  clases llamadas .text-1a .text-5donde cada una tiene un font-sizeconjunto de 15px multiplicado por el índice.*/
+/*Ejercicio*/
+/*Su código debe usar la @fordirectiva.
+Su .text-1 clase debe tener una font-sizede 15px.
+Tu .text-2 clase debe tener un font-sizetamaño de 30px.
+Tu .text-3 clase debe tener un font-sizetamaño de 45px.
+Tu .text-4 clase debe tener un font-sizetamaño de 60px.
+Tu .text-5 clase debe tener un font-sizetamaño de 75px.*/
+
+<style type='text/scss'>
+@for $j from 1 through 5 {
+    .text-#{$j} { font-size: 15px * $j; }
+  }
+
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
